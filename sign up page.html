@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title> Sign up page </title>
+<style>
+#div1
+{
+background-color: #704241; 
+color: white; 
+font-family: Lucida Bright; 
+font-size: 30px; 
+text-align: center; 
+margin-left: 400px; 
+margin-right: 380px;
+margin-top: 10px;
+margin-bottom: 10px; 
+padding: 3px;
+box-shadow: 20px 20px 30px black;
+border: 3px solid black;
+opacity: 80%;
+}
+input[type=submit]
+{
+width: 80px ;
+padding: 10px;
+background-color: #3d0c02;
+color: white;
+font-family: Times New Roman;
+font-size: 15px;
+cursor: pointer;
+}
+input[type=submit]:hover
+{
+background-color: #a7fc00;
+}
+input[type=text]
+{
+width: 400px;
+height: 35px;
+padding: 5px;
+font-family: Times New Roman;
+font-size: 20px;
+}
+input[type=password]
+{
+width: 400px;
+height: 35px;
+padding: 5px;
+font-family: Times New Roman;
+font-size: 20px;
+}
+input[type=text]:hover
+{
+background-color: #fbec5d;
+}
+input[type=password]:hover
+{
+background-color: #fbec5d;
+}
+</style>
+</head>
+<body style= "background-image: url('bg\ img8.jpg'); background-repeat: no-repeat; background-size: cover;">
+<form action= "login.html" target= "_self"> 
+<div id= "div1">
+<h1> SIGN UP 
+<br>
+<label for= "firstname"> </label>
+<input type= "text" id= "firstname" placeholder= "First Name" required >
+<br>
+<label for= "lastname"> </label>
+<input type= "text" id= "lastname" placeholder= "Last Name"> 
+<br>
+<label for= "email"> </label>
+<input type= "text" id= "email"  placeholder= "Email" required >
+<br>
+<label for= "pswd"> </label>
+<input type= "password" id= "pswd" placeholder= "Password" required minlength= "7" maxlength= "10">
+<br>
+<label for= "cpswd"> </label>
+<input type= "password" id= "cpsd" placeholder= "Confirm Password" required >
+<br>
+<input type= "submit" value= "SIGN UP">
+</h1> 
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calorie Calculator</title>
+</head>
+<style>
+#div1
+{
+  color: #FFFFFF; 
+  font-family: Times New Roman; 
+  font-size: 20px; 
+  text-align: center; 
+  margin-left: 350px; 
+  margin-right: 350px; 
+  margin-top: 40px;
+  padding: 1px;
+  background-color: #4E342E;
+  opacity: 90%;
+  border: 2px solid black;
+  box-shadow: 6px 6px 5px black;
+}
+#div2
+{
+  color: #FFFFFF; 
+  font-family: Times New Roman; 
+  font-size: 20px; 
+  text-align: center; 
+  margin-left: 350px; 
+  margin-right: 350px; 
+  margin-top: 10px;
+  padding: 1px;
+  background-color: #4E342E;
+  opacity: 90%;
+  border: 2px solid black;
+  box-shadow: 6px 6px 5px black;
+}
+label {
+        display: block;
+        margin: 1em;
+        border-radius: 1ex;
+        padding: 1ex 1em;
+      }
+      input[type=number] {
+        text-align: right;
+        border: none;
+      }
+      input {
+        float: right;
+      }
+      span {
+        font-weight: bold;
+      }
+input[type= "submit"]
+{
+  width: 240px ;
+  padding: 10px;
+  text-align: center; 
+  background-color: #4E342E;
+  color: #FDFEFE;
+  font-family: Times New Roman;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 350px; 
+  margin-right: 500px;
+  margin-bottom: 20px;
+  box-shadow: 6px 6px 5px black;
+  opacity: 90%;
+}
+input[type=submit]:hover
+{
+background-color: #addfad;
+}
+</style>
+<script>
+    function calsPerDay() {
+    function find(id) { return document.getElementById(id) }
+
+    var age = find("age").value
+    var height = find("height").value * 2.54
+    var weight = find("weight").value / 2.2
+    var result = 0
+    if (find("male").checked) 
+      result = 66.47 + (13.75 * weight) + (5.0 * height - (6.75 * age))
+    else if (find("female").checked)
+      result = 665.09 + (9.56 * weight) + (1.84 * height - (4.67 * age))
+    find("totalCals").innerHTML = Math.round( result )
+  }
+  calsPerDay()
+</script>
+<body style= "background-image: url('bg\ img.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <form action = "intro.html" target= "_self">
+  <div id= "div1">
+    <h1>Calorie Calculator</h1>
+  </div>
+  <div id="div2">
+    <label>Female:
+      <input id="female" type="radio" name="gender" onchange="calsPerDay()">
+    </label>
+    <label>Male:
+      <input id="male" type="radio" name="gender" onchange="calsPerDay()" checked>
+    </label>
+    <label>Age:
+      <input id="age" type="number" oninput="calsPerDay()" value="50">
+      years
+    </label>
+    <label>Height:
+      <input id="height" type="number" oninput="calsPerDay()" value="70">
+      in inches (12 inches=1 foot)
+    </label>
+    <label>Weight:
+      <input id="weight" type="number" oninput="calsPerDay()" value="225">
+      in pounds
+    </label>
+    <label onclick="calsPerDay">
+      Base metabolic rate: <span id="totalCals"></span> kcal per day
+    </label>
+  </div>
+  <input type= "submit" value= "Home">
+</body>
+</html>
